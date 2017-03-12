@@ -8,8 +8,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CommonAssemblyInfo.cs = CommonAssemblyInfo.cs
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{D4A9953B-3D53-4B8A-8E86-5F6EDF5F5013}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared.Exia.Xaml", "src\Shared\Shared.Exia.Xaml\Shared.Exia.Xaml.shproj", "{2E67E311-0811-4138-8086-2E3DEBBA5D0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platform", "Platform", "{AA646C7B-646E-447A-BE21-8427ABFD7709}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{98DAEAC6-7C2D-46B0-B295-8A850692AC8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Xaml", "src\Platform\Desktop\Exia.Xaml\Exia.Xaml.csproj", "{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Shared\Shared.Exia.Xaml\Shared.Exia.Xaml.projitems*{2c497ebd-47ad-4d5d-8cd3-a81a8a98bd6f}*SharedItemsImports = 4
+		src\Shared\Shared.Exia.Xaml\Shared.Exia.Xaml.projitems*{2e67e311-0811-4138-8086-2e3debba5d0c}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E67E311-0811-4138-8086-2E3DEBBA5D0C} = {D4A9953B-3D53-4B8A-8E86-5F6EDF5F5013}
+		{98DAEAC6-7C2D-46B0-B295-8A850692AC8E} = {AA646C7B-646E-447A-BE21-8427ABFD7709}
+		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
 	EndGlobalSection
 EndGlobal
