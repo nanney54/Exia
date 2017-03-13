@@ -18,10 +18,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{98DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Xaml", "src\Platform\Desktop\Exia.Xaml\Exia.Xaml.csproj", "{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared.Exia.Utils", "src\Shared\Shared.Exia.Utils\Shared.Exia.Utils.shproj", "{E9209C5E-96B3-47D8-A162-8D829D13FF3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Utils", "src\Platform\Desktop\Exia.Utils\Exia.Utils.csproj", "{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\Shared\Shared.Exia.Xaml\Shared.Exia.Xaml.projitems*{2c497ebd-47ad-4d5d-8cd3-a81a8a98bd6f}*SharedItemsImports = 4
 		src\Shared\Shared.Exia.Xaml\Shared.Exia.Xaml.projitems*{2e67e311-0811-4138-8086-2e3debba5d0c}*SharedItemsImports = 13
+		src\Shared\Shared.Exia.Utils\Shared.Exia.Utils.projitems*{6fbdfdd8-812a-4c1f-8da8-ce451c597eab}*SharedItemsImports = 4
+		src\Shared\Shared.Exia.Utils\Shared.Exia.Utils.projitems*{e9209c5e-96b3-47d8-a162-8d829d13ff3b}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +38,10 @@ Global
 		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,5 +50,7 @@ Global
 		{2E67E311-0811-4138-8086-2E3DEBBA5D0C} = {D4A9953B-3D53-4B8A-8E86-5F6EDF5F5013}
 		{98DAEAC6-7C2D-46B0-B295-8A850692AC8E} = {AA646C7B-646E-447A-BE21-8427ABFD7709}
 		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
+		{E9209C5E-96B3-47D8-A162-8D829D13FF3B} = {D4A9953B-3D53-4B8A-8E86-5F6EDF5F5013}
+		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
 	EndGlobalSection
 EndGlobal
