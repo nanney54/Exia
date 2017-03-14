@@ -9,6 +9,7 @@
     <Import_RootNamespace>Shared.Exia.Utils</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CollectionExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExpressionExtension.cs" />
   </ItemGroup>
 </Project>
