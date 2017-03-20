@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4278CC9A-1F83-47B0-B506-10C45805BDD2}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,10 +22,18 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared.Exia.Utils", "src\Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Utils", "src\Platform\Desktop\Exia.Utils\Exia.Utils.csproj", "{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared.Exia.Mvvm", "src\Shared\Shared.Exia.Mvvm\Shared.Exia.Mvvm.shproj", "{13B53029-D074-4C5F-8A79-66B4014AC04A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Mvvm", "src\Platform\Desktop\Exia.Mvvm\Exia.Mvvm.csproj", "{6B4AD98D-3E1F-446A-8F51-407C81202B14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Mvvm.Test", "test\Exia.Mvvm.Test\Exia.Mvvm.Test.csproj", "{8E9D9F43-F1AD-4A14-9033-339E97577D25}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Shared\Shared.Exia.Mvvm\Shared.Exia.Mvvm.projitems*{13b53029-d074-4c5f-8a79-66b4014ac04a}*SharedItemsImports = 13
 		src\Shared\Shared.Exia.Xaml\Shared.Exia.Xaml.projitems*{2c497ebd-47ad-4d5d-8cd3-a81a8a98bd6f}*SharedItemsImports = 4
 		src\Shared\Shared.Exia.Xaml\Shared.Exia.Xaml.projitems*{2e67e311-0811-4138-8086-2e3debba5d0c}*SharedItemsImports = 13
+		src\Shared\Shared.Exia.Mvvm\Shared.Exia.Mvvm.projitems*{6b4ad98d-3e1f-446a-8f51-407c81202b14}*SharedItemsImports = 4
 		src\Shared\Shared.Exia.Utils\Shared.Exia.Utils.projitems*{6fbdfdd8-812a-4c1f-8da8-ce451c597eab}*SharedItemsImports = 4
 		src\Shared\Shared.Exia.Utils\Shared.Exia.Utils.projitems*{e9209c5e-96b3-47d8-a162-8d829d13ff3b}*SharedItemsImports = 13
 	EndGlobalSection
@@ -42,6 +50,14 @@ Global
 		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4AD98D-3E1F-446A-8F51-407C81202B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4AD98D-3E1F-446A-8F51-407C81202B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4AD98D-3E1F-446A-8F51-407C81202B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4AD98D-3E1F-446A-8F51-407C81202B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E9D9F43-F1AD-4A14-9033-339E97577D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E9D9F43-F1AD-4A14-9033-339E97577D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E9D9F43-F1AD-4A14-9033-339E97577D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E9D9F43-F1AD-4A14-9033-339E97577D25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +68,7 @@ Global
 		{2C497EBD-47AD-4D5D-8CD3-A81A8A98BD6F} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
 		{E9209C5E-96B3-47D8-A162-8D829D13FF3B} = {D4A9953B-3D53-4B8A-8E86-5F6EDF5F5013}
 		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
+		{13B53029-D074-4C5F-8A79-66B4014AC04A} = {D4A9953B-3D53-4B8A-8E86-5F6EDF5F5013}
+		{6B4AD98D-3E1F-446A-8F51-407C81202B14} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
 	EndGlobalSection
 EndGlobal
