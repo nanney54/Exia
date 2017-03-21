@@ -23,7 +23,7 @@ namespace Exia.Mvvm.Test {
             };
 
             oob.Changing = "new value";
-            Assert.Equal(true, isChanging);
+            Assert.True(isChanging);
         }
 
         [Fact]
