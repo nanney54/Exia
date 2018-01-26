@@ -28,6 +28,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Mvvm", "src\Platform\D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Mvvm.Test", "test\Exia.Mvvm.Test\Exia.Mvvm.Test.csproj", "{8E9D9F43-F1AD-4A14-9033-339E97577D25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exia.Mvvm.Sample", "sample\Exia.Mvvm.Sample\Exia.Mvvm.Sample.csproj", "{5358B7FB-39CD-4412-BFB4-063B7D05CE62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{262B9075-9445-45B3-908B-C22FF3D86903}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\Shared\Shared.Exia.Mvvm\Shared.Exia.Mvvm.projitems*{13b53029-d074-4c5f-8a79-66b4014ac04a}*SharedItemsImports = 13
@@ -58,6 +62,10 @@ Global
 		{8E9D9F43-F1AD-4A14-9033-339E97577D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E9D9F43-F1AD-4A14-9033-339E97577D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E9D9F43-F1AD-4A14-9033-339E97577D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5358B7FB-39CD-4412-BFB4-063B7D05CE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5358B7FB-39CD-4412-BFB4-063B7D05CE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5358B7FB-39CD-4412-BFB4-063B7D05CE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5358B7FB-39CD-4412-BFB4-063B7D05CE62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +78,6 @@ Global
 		{6FBDFDD8-812A-4C1F-8DA8-CE451C597EAB} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
 		{13B53029-D074-4C5F-8A79-66B4014AC04A} = {D4A9953B-3D53-4B8A-8E86-5F6EDF5F5013}
 		{6B4AD98D-3E1F-446A-8F51-407C81202B14} = {98DAEAC6-7C2D-46B0-B295-8A850692AC8E}
+		{5358B7FB-39CD-4412-BFB4-063B7D05CE62} = {262B9075-9445-45B3-908B-C22FF3D86903}
 	EndGlobalSection
 EndGlobal

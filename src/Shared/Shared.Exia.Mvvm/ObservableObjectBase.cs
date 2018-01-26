@@ -18,7 +18,11 @@ namespace Exia.Mvvm {
                 throw new ArgumentNullException(nameof(propertyName));
             }
 
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e) {
+            this.PropertyChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -30,21 +34,26 @@ namespace Exia.Mvvm {
                 throw new ArgumentNullException(nameof(propertyName));
             }
 
-            this.PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
+            this.OnPropertyChanging(new PropertyChangingEventArgs(propertyName));
+        }
+
+        protected virtual void OnPropertyChanging(PropertyChangingEventArgs e) {
+            this.PropertyChanging?.Invoke(this, e);
         }
 
         /// <summary>
         /// Assign a new value to the property if it is different from old value and
-        /// notifies clients that a property value has changed.
+        /// notify client that a property value has changed.
         /// </summary>
         /// <typeparam name="T">Type of the property.</typeparam>
         /// <param name="field">The field storing the property's value.</param>
         /// <param name="value">Desired value for the property.</param>
+        /// <param name="propertyName">The name of property</param>
         /// <returns>
         /// True if the value has changed otherwise false if the old value is equal to the new value.
         /// </returns>
-        protected bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null) {
-            if (EqualityComparer<T>.Default.Equals(field, value)) {
+        protected virtual bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null) {
+            if (this.IsSameValue(field, value)) {
                 return false;
             }
 
@@ -53,6 +62,10 @@ namespace Exia.Mvvm {
             this.RaisePropertyChanged(propertyName);
 
             return true;
+        }
+
+        protected virtual bool IsSameValue<T>(T fieldValue, T value) {
+            return EqualityComparer<T>.Default.Equals(fieldValue, value);
         }
 
         /// <summary>
