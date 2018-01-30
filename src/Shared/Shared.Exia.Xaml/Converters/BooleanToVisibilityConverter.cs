@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using System.Globalization;
 
-namespace Exia.Xaml {
+namespace Exia.Controls.Converters {
     /// <summary>
     ///     Represents the converter that converts Boolean values to and from Visibility enumeration values. 
     /// </summary>
@@ -18,14 +18,16 @@ namespace Exia.Xaml {
         /// <returns>Visibility.Visible if value is true; otherwise, Visibility.Collapsed.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
             bool flag = false;
+
             if (value is bool) {
                 flag = (bool)value;
             }
             else if (value is bool?) {
                 bool? nullable = (bool?)value;
-                flag = nullable.HasValue ? nullable.Value : false;
+                flag = nullable ?? false;
             }
-            return (flag ? Visibility.Visible : Visibility.Collapsed);
+
+            return flag ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <summary>

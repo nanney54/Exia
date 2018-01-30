@@ -14,15 +14,11 @@ namespace Exia.Utils {
                 throw new ArgumentNullException("propertyExpression");
             }
 
-            MemberExpression body = propertyExpression.Body as MemberExpression;
-
-            if (body == null) {
+            if (!(propertyExpression.Body is MemberExpression body)) {
                 throw new ArgumentException("Invalid argument", "propertyExpression");
             }
 
-            PropertyInfo member = body.Member as PropertyInfo;
-
-            if (member == null) {
+            if (!(body.Member is PropertyInfo member)) {
                 throw new ArgumentException("Argument is not a property", "propertyExpression");
             }
 
@@ -48,16 +44,14 @@ namespace Exia.Utils {
         /// <returns></returns>
         public static bool EqualToPropertyName<T>(this string source, Expression<Func<T>> propertyExpression) {
             if (string.IsNullOrEmpty(source)) {
-                throw new ArgumentNullException("Source");
+                throw new ArgumentNullException(nameof(source));
             }
 
             if (propertyExpression == null) {
-                throw new ArgumentNullException("propertyName");
+                throw new ArgumentNullException(nameof(propertyExpression));
             }
 
-            string propertyName = ExpressionExtension.GetPropertyName(propertyExpression);
-
-            return source == propertyName;
+            return source == ExpressionExtension.GetPropertyName(propertyExpression);
         }
     }
 }

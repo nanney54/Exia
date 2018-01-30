@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Data;
 
-namespace Exia.Xaml {
+namespace Exia.Controls.Converters {
     /// <summary>
     ///     Represents the converter that invert Boolean values. 
     /// </summary>
@@ -16,12 +16,13 @@ namespace Exia.Xaml {
         /// <returns>Boolean. Return the inverse of in value, If the value is true the result will false else if the value is false the result will true</returns>
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
             bool flag = false;
+
             if (value is bool) {
                 flag = (bool)value;
             }
             else if (value is bool?) {
                 bool? nullable = (bool?)value;
-                flag = nullable.HasValue ? nullable.Value : false;
+                flag = nullable ?? false;
             }
 
             return !flag;

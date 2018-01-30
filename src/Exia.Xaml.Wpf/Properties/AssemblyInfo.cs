@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Exia.Mvvm")]
-[assembly: AssemblyProduct("Exia.Mvvm")]
+[assembly: AssemblyTitle("Exia.Xaml.Wpf")]
+[assembly: AssemblyProduct("Exia.Xaml.Wpf")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
@@ -14,4 +13,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6b4ad98d-3e1f-446a-8f51-407c81202b14")]
+[assembly: Guid("c0e75c1a-b8c4-4579-b150-04f0d779170a")]

@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Exia.Xaml {
+namespace Exia.Controls.Converters {
     /// <summary>
     ///     Represents the converter that obtain index of <see cref="ListBoxItem"/> in a <see cref="ListBox"/> control.
     ///     It's possible to use parameter to add an integer to the index.
@@ -21,17 +21,15 @@ namespace Exia.Xaml {
                 parameter = 0;
             }
 
-            ListBoxItem item = value as ListBoxItem;
-
-            if (item == null) {
+            if (!(value is ListBoxItem item)) {
                 throw new ArgumentException("value must be a ListBoxItem");
             }
 
             ListBox view = ItemsControl.ItemsControlFromItemContainer(item) as ListBox;
-            int index = view.ItemContainerGenerator.IndexFromContainer(item);
-            int increment;
 
-            if (int.TryParse(parameter.ToString(), out increment)) {
+            int index = view.ItemContainerGenerator.IndexFromContainer(item);
+            
+            if (int.TryParse(parameter.ToString(), out int increment)) {
                 index = index + increment;
             }
 

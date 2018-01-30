@@ -6,7 +6,7 @@ namespace Exia.Mvvm.Sample {
     /// </summary>
     public partial class MainWindow : Window {
         public MainWindow() {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e) {

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Data;
 
-namespace Exia.Xaml {
+namespace Exia.Controls.Converters {
     public class InvertVisibilityConverter : IValueConverter {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
             return ((value is Visibility) && (((Visibility)value) == Visibility.Visible))
