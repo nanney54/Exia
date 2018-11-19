@@ -32,20 +32,20 @@
             <TextBlock><Run>Login</Run> <Run Foreground="Red">*</Run></TextBlock>
             <TextBox x:Name="login"
                 Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
-                Text="{Binding Path=Login, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+                Text="{Binding Path=Login, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
 
             <TextBlock><Run>Email</Run> <Run Foreground="Red">*</Run></TextBlock>
             <TextBox 
                 Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
-                Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+                Text="{Binding Path=Email, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
 
             <TextBlock Text="Age"/>
             <TextBox 
                 Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
-                Text="{Binding Path=Age, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+                Text="{Binding Path=Age, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
 
             <StackPanel Orientation="Horizontal">
-                <Button Content="validate" Click="Button_Click"/>
+                <Button Content="validate" Command="{Binding ValidateCommand}"/>
             </StackPanel>
 
             <CheckBox x:Name="cbValid" IsEnabled="False" Content="IsValid ?"/>
