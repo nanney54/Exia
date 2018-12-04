@@ -3,8 +3,7 @@ using System.Windows.Input;
 
 namespace Exia.Mvvm {
     public class RelayCommand : ICommand {
-        public RelayCommand(Action action) 
-            : this(action, () => true) {
+        public RelayCommand(Action action) : this(action, () => true) {
             
         }
 
@@ -21,9 +20,9 @@ namespace Exia.Mvvm {
             this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
 
+        public event EventHandler CanExecuteChanged;
+
         private readonly Action action;
         private readonly Func<bool> canExecute;
-
-        public event EventHandler CanExecuteChanged;
     }
 }

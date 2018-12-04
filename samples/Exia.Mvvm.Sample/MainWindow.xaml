@@ -46,6 +46,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Button Content="validate" Command="{Binding ValidateCommand}"/>
+                <CheckBox IsChecked="{Binding ValidateCommand.IsBusy, Mode=OneWay}"/>
             </StackPanel>
 
             <CheckBox x:Name="cbValid" IsEnabled="False" Content="IsValid ?"/>

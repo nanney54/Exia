@@ -11,5 +11,6 @@ namespace Exia.Mvvm.Sample {
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application {
+
     }
 }

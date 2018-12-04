@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Input;
 using Xunit;
 using Exia.Mvvm;
+using System.Threading.Tasks;
 
 namespace Exia.Mvvm.Test {
     public class RelayCommandTest {
@@ -159,6 +160,68 @@ namespace Exia.Mvvm.Test {
 
             //Assert
             Assert.True(result);
+        }
+
+        [Fact]
+        public void Execute_WithoutParameter_RaisedIsBusyProperty() {
+            //Assign
+            bool isExecuted = false;
+
+            RelayCommand command = new RelayCommand(() => isExecuted = true);
+
+            //Act
+            command.Execute(null);
+
+            //Assert
+            Assert.True(isExecuted);
+        }
+
+        [Fact]
+        public async Task Execute_AsyncFunction_RaisedIsBusyProperty() {
+            //Assign
+            bool isExecuted = false;
+            int countChange = 0;
+            Task func() => Task.Factory.StartNew(() => isExecuted = true);
+
+            AsyncRelayCommand command = new AsyncRelayCommand(func);
+
+            command.PropertyChanged += (o, e) => {
+                if (e.PropertyName == nameof(IAsyncCommand.IsBusy)) {
+                    countChange++;
+                }
+            };
+
+            //Act
+            await command.ExecuteAsync(null);
+
+            //Assert
+            Assert.True(isExecuted);
+            Assert.Equal(2, countChange);
+        }
+
+        [Fact]
+        public async Task Execute_AsyncFunctionOfT_RaisedIsBusyProperty() {
+            //Assign
+            bool isExecuted = false;
+            int countChange = 0;
+            Task func<T>(T parameter) => Task.Factory.StartNew(() => {
+                isExecuted = parameter is bool;
+            });
+
+            AsyncRelayCommand<bool> command = new AsyncRelayCommand<bool>(func);
+
+            command.PropertyChanged += (o, e) => {
+                if (e.PropertyName == nameof(IAsyncCommand.IsBusy)) {
+                    countChange++;
+                }
+            };
+
+            //Act
+            await command.ExecuteAsync(true);
+
+            //Assert
+            Assert.True(isExecuted);
+            Assert.Equal(2, countChange);
         }
     }
 }

@@ -13,21 +13,17 @@ namespace Exia.Mvvm {
             this.canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
         }
 
-        public bool CanExecute(object parameter) {
-            return this.canExecute((T)parameter);
-        }
+        public bool CanExecute(object parameter) => this.canExecute((T)parameter);
 
-        public void Execute(object parameter) {
-            this.action((T)parameter);
-        }
+        public void Execute(object parameter) => this.action((T)parameter);
 
         public void RaiseCanExecuteChanged() {
             this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
 
+        public event EventHandler CanExecuteChanged;
+
         private readonly Action<T> action;
         private readonly Func<T, bool> canExecute;
-
-        public event EventHandler CanExecuteChanged;
     }
 }

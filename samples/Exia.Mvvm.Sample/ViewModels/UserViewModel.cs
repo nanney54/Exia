@@ -1,14 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace Exia.Mvvm.Sample.ViewModels {
     public class UserViewModel : ViewModelBase {
         public UserViewModel() {
-            this.ValidateCommand = new RelayCommand(this.OnValidate, () => !string.IsNullOrEmpty(this.Login));
+            this.ValidateCommand = new AsyncRelayCommand(this.OnValidateAsync);
         }
 
-        private void OnValidate() {
+        private async Task OnValidateAsync() {
+            var client = new System.Net.WebClient();
 
+            string result = await client.DownloadStringTaskAsync("https://jsonplaceholder.typicode.com/photos");
+            result += await client.DownloadStringTaskAsync("https://jsonplaceholder.typicode.com/photos");
+            result += await client.DownloadStringTaskAsync("https://jsonplaceholder.typicode.com/photos");
+            result += await client.DownloadStringTaskAsync("https://jsonplaceholder.typicode.com/photos");
+            result += await client.DownloadStringTaskAsync("https://jsonplaceholder.typicode.com/photos");
+
+            await Task.Delay(2000);
         }
 
         private string login;
@@ -17,7 +29,6 @@ namespace Exia.Mvvm.Sample.ViewModels {
             get { return this.login; }
             set {
                 this.SetProperty(ref this.login, value);
-                (this.ValidateCommand as RelayCommand).RaiseCanExecuteChanged();
             }
         }
 
